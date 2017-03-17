@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  start: 2017-03-17 14:41:23
+  end: 2017-03-17 14:41:23
+  average_income: 1.5
+  image: MyString
+  user: one
+
+two:
+  status: MyString
+  start: 2017-03-17 14:41:23
+  end: 2017-03-17 14:41:23
+  average_income: 1.5
+  image: MyString
+  user: two
