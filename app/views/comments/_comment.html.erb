@@ -1,0 +1,16 @@
+ <!-- Comment --><br/>
+                <div class="media">
+                    <a class="pull-left" href="#">
+                       
+                    </a>
+                    <div class="media-body">
+                        
+                        <h4 class="media-heading">Submitted by <%=comment.user.email%>
+                            <small><%= time_ago_in_words(comment.created_at)%> ago</small>
+                        </h4>
+                        <p><%= comment.body %></p>
+                        <!-- Nested Comment -->
+                        <%= render(partial: 'comments/comment' , collection: comment.comments) %>
+                        <!-- End Nested Comment -->
+                    </div>
+                </div>

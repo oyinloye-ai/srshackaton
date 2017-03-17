@@ -1,0 +1,4 @@
+$("#comment-<%=comment.id%>").html("<%= escape_javascript(render('layouts/shared/unfollow'))%>")
+$("#reply-<%=comment.id%>").click(function(){
+	$("#reply-<%=comment.id%>").html("Hello world");
+});

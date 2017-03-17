@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @user.country %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @user.phonenumber %>
+</p>
+
+<p>
+  <strong>Dateofbirth:</strong>
+  <%= @user.dateofbirth %>
+</p>
+
+<p>
+  <strong>Photourl:</strong>
+  <%= image_tag @user.image.url if @user.image? %>
+</p>
+
+<%= render 'layouts/shared/follow_form' %>
+

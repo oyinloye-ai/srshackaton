@@ -1,0 +1,2 @@
+class Pinnacle < ApplicationRecord
+end
