@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226220321) do
+ActiveRecord::Schema.define(version: 20170317120052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "savings", force: :cascade do |t|
+    t.string   "account_number"
+    t.float    "amount"
+    t.datetime "date"
+    t.string   "image"
+    t.boolean  "verified",       default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_savings_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
@@ -29,4 +41,5 @@ ActiveRecord::Schema.define(version: 20170226220321) do
     t.string   "username"
   end
 
+  add_foreign_key "savings", "users"
 end

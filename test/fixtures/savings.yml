@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_number: MyString
+  amount: 1.5
+  date: 2017-03-17 11:54:18
+  image: MyString
+  verified: false
+
+two:
+  account_number: MyString
+  amount: 1.5
+  date: 2017-03-17 11:54:18
+  image: MyString
+  verified: false
