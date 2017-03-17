@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317150407) do
+ActiveRecord::Schema.define(version: 20170317205126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20170317150407) do
     t.index ["user_id"], name: "index_employments_on_user_id", using: :btree
   end
 
+  create_table "expenditures", force: :cascade do |t|
+    t.string   "expense_type"
+    t.float    "amount"
+    t.integer  "period"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_expenditures_on_user_id", using: :btree
+  end
+
   create_table "guarantors", force: :cascade do |t|
     t.string   "fullname"
     t.string   "business"
@@ -35,6 +45,19 @@ ActiveRecord::Schema.define(version: 20170317150407) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_guarantors_on_user_id", using: :btree
+  end
+
+  create_table "institutions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "loan"
+    t.integer  "amount"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "degree"
+    t.index ["user_id"], name: "index_institutions_on_user_id", using: :btree
   end
 
   create_table "savings", force: :cascade do |t|
@@ -64,6 +87,8 @@ ActiveRecord::Schema.define(version: 20170317150407) do
   end
 
   add_foreign_key "employments", "users"
+  add_foreign_key "expenditures", "users"
   add_foreign_key "guarantors", "users"
+  add_foreign_key "institutions", "users"
   add_foreign_key "savings", "users"
 end

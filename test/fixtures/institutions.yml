@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start: 2017-03-17 20:31:09
+  end: 2017-03-17 20:31:09
+  loan: MyString
+  amount: 1
+  user: one
+
+two:
+  name: MyString
+  start: 2017-03-17 20:31:09
+  end: 2017-03-17 20:31:09
+  loan: MyString
+  amount: 1
+  user: two

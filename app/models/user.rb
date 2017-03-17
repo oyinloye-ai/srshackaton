@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :savings
   has_many :employments
   has_many :guarantors
+  has_many :expenditures
   #A users activity shouldn't leave because they leave the platform
   #handle in a better way
   #Add a db column to make users active or inactive so on destroy

@@ -12,5 +12,4 @@ json.array! @users do |user|
 	json.guarantor user.guarantors do |g|
 		json.(g, :fullname, :business, :annual_income)
 	end
-
 end

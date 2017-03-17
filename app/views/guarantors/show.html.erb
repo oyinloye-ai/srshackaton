@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @guarantor.fullname %>
+</p>
+
+<p>
+  <strong>Business:</strong>
+  <%= @guarantor.business %>
+</p>
+
+<p>
+  <strong>Annual income:</strong>
+  <%= @guarantor.annual_income %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @guarantor.user %>
+</p>
+
+<%= link_to 'Edit', edit_guarantor_path(@guarantor) %> |
+<%= link_to 'Back', guarantors_path %>

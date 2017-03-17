@@ -1,0 +1,37 @@
+<%= form_for(guarantor) do |f| %>
+  <% if guarantor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guarantor.errors.count, "error") %> prohibited this guarantor from being saved:</h2>
+
+      <ul>
+      <% guarantor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fullname %>
+    <%= f.text_field :fullname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :business %>
+    <%= f.text_field :business %>
+  </div>
+
+  <div class="field">
+    <%= f.label :annual_income %>
+    <%= f.text_field :annual_income %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
