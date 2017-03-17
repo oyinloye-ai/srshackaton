@@ -14,10 +14,7 @@ class HomeController < ApplicationController
   end
 
   def member
-    @user = current_user
-    @post = Post.new
-
-   @posts = Post.all.where("user_id = ? OR user_id in (?)", current_user,current_user.following.map(&:id)).order(created_at: :asc)
+    
   end
 
 
