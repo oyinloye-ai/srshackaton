@@ -1,0 +1,2 @@
+class FinancialTraderScore < ApplicationRecord
+end

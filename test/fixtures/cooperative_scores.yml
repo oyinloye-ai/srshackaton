@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registered_cooperative: 1.5
+  know_cooperative: 1.5
+  leadership_position: 1.5
+  active_member: 1.5
+  credit_score_from_co: 1.5
+  verified: 1.5
+  description: MyText
+
+two:
+  registered_cooperative: 1.5
+  know_cooperative: 1.5
+  leadership_position: 1.5
+  active_member: 1.5
+  credit_score_from_co: 1.5
+  verified: 1.5
+  description: MyText

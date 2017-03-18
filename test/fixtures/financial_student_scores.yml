@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  self_sponsored: 1.5
+  government_sponsored: 1.5
+  parent_sponsored: 1.5
+  verified: 1.5
+  description: MyText
+
+two:
+  self_sponsored: 1.5
+  government_sponsored: 1.5
+  parent_sponsored: 1.5
+  verified: 1.5
+  description: MyText

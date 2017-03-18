@@ -1,0 +1,2 @@
+class CooperativeScore < ApplicationRecord
+end

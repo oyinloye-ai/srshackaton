@@ -1,0 +1,2 @@
+class MobileDataScore < ApplicationRecord
+end

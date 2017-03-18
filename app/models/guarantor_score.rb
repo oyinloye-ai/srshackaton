@@ -1,0 +1,2 @@
+class GuarantorScore < ApplicationRecord
+end

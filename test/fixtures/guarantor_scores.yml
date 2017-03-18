@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employed_gov: 1.5
+  employed_known_company: 1.5
+  employed_unknown: 1.5
+  demographic_data: 1.5
+  verified: 1.5
+  description: MyText
+
+two:
+  employed_gov: 1.5
+  employed_known_company: 1.5
+  employed_unknown: 1.5
+  demographic_data: 1.5
+  verified: 1.5
+  description: MyText

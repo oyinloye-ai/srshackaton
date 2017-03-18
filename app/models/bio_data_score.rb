@@ -1,0 +1,2 @@
+class BioDataScore < ApplicationRecord
+end
