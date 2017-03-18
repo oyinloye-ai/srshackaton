@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_usage: 1.5
+  call_duration: 1.5
+  installing_app: 1.5
+
+two:
+  data_usage: 1.5
+  call_duration: 1.5
+  installing_app: 1.5

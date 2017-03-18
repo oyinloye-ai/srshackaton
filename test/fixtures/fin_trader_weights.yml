@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_revenue: 1.5
+  business_type: 1.5
+  verified: 1.5
+  description: MyText
+
+two:
+  business_revenue: 1.5
+  business_type: 1.5
+  verified: 1.5
+  description: MyText

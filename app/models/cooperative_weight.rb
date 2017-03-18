@@ -1,0 +1,2 @@
+class CooperativeWeight < ApplicationRecord
+end

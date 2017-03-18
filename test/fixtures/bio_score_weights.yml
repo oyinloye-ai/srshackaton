@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  completed: 1.5
+  verified: 1.5
+  description: MyText
+
+two:
+  completed: 1.5
+  verified: 1.5
+  description: MyText
