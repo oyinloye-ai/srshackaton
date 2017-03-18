@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :savings
   has_many :employments
   has_many :guarantors
+  has_many :institutions
   has_many :expenditures
   #A users activity shouldn't leave because they leave the platform
   #handle in a better way
