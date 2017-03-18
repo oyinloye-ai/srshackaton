@@ -4,7 +4,7 @@ class Api::V1::GuarantorsController < Api::V1::BaseController
   # GET /guarantors
   # GET /guarantors.json
   def index
-    @guarantors = Guarantor.all
+    @guarantors = @current_user.guarantors.all
     respond_with @guarantors
   end
 

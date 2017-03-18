@@ -4,7 +4,7 @@ class Api::V1::EmploymentsController < Api::V1::BaseController
   # GET /employments
   # GET /employments.json
   def index
-    @employments = Employment.all
+    @employments = @current_user.employments.all
     respond_with @employments
   end
 
@@ -25,7 +25,7 @@ class Api::V1::EmploymentsController < Api::V1::BaseController
   # POST /employments
   # POST /employments.json
   def create
-    @employment = Employment.new(employment_params)
+    @employment = @current_user.employments.new(employment_params)
 
     respond_to do |format|
       if @employment.save

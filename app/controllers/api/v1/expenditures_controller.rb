@@ -4,7 +4,7 @@ class Api::V1::ExpendituresController < Api::V1::BaseController
   # GET /expenditures
   # GET /expenditures.json
   def index
-    @expenditures = Expenditure.all
+    @expenditures = @current_user.expenditures.all
     respond_with @expenditures
   end
 
@@ -25,7 +25,7 @@ class Api::V1::ExpendituresController < Api::V1::BaseController
   # POST /expenditures
   # POST /expenditures.json
   def create
-    @expenditure = Expenditure.new(expenditure_params)
+    @expenditure = @current_user.expenditures.new(expenditure_params)
 
     respond_to do |format|
       if @expenditure.save
