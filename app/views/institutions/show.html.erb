@@ -26,9 +26,10 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @institution.user %>
+  <strong>Photourl:</strong>
+  <%= image_tag @institution.image.thumbnail.url if @institution.image? %>
 </p>
+
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>

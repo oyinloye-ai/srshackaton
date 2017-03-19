@@ -70,6 +70,6 @@ class Api::V1::EmploymentsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employment_params
-      params.require(:employment).permit(:expense_type, :amount, :period, :user_id)
+      params.require(:employment).permit(:expense_type, :amount, :period, :image)
     end
 end

@@ -4,7 +4,7 @@ class Api::V1::InstitutionsController < Api::V1::BaseController
   # GET /institutions
   # GET /institutions.json
   def index
-    @institutions = Institution.all
+    @institutions = @current_user.institutions.all
     respond_with @institutions
   end
 
@@ -25,7 +25,7 @@ class Api::V1::InstitutionsController < Api::V1::BaseController
   # POST /institutions
   # POST /institutions.json
   def create
-    @institution = Institution.new(institution_params)
+    @institution = @current_user.institutions.new(institution_params)
 
     respond_to do |format|
       if @institution.save
@@ -70,6 +70,6 @@ class Api::V1::InstitutionsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def institution_params
-      params.require(:institution).permit(:name, :start, :end, :loan, :amount, :user_id)
+      params.require(:institution).permit(:name, :start, :end, :loan, :amount, :image)
     end
 end

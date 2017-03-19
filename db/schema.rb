@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318210646) do
+ActiveRecord::Schema.define(version: 20170319162609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bio_data_scores", force: :cascade do |t|
-    t.float    "completed"
-    t.float    "verified"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bio_score_weights", force: :cascade do |t|
     t.float    "completed"
@@ -28,18 +21,6 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "cooperative_scores", force: :cascade do |t|
-    t.float    "registered_cooperative"
-    t.float    "know_cooperative"
-    t.float    "leadership_position"
-    t.float    "active_member"
-    t.float    "credit_score_from_co"
-    t.float    "verified"
-    t.text     "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "cooperative_weights", force: :cascade do |t|
@@ -51,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.float    "verified"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "image"
   end
 
   create_table "edu_score_weights", force: :cascade do |t|
@@ -63,18 +45,6 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.float    "others"
     t.float    "verified"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "educational_scores", force: :cascade do |t|
-    t.float    "school_name"
-    t.float    "fresher"
-    t.float    "mid_year"
-    t.float    "last_year"
-    t.float    "higher_degree"
-    t.float    "first_degree"
-    t.float    "verified"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -98,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "image"
     t.index ["user_id"], name: "index_expenditures_on_user_id", using: :btree
   end
 
@@ -120,25 +91,6 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.datetime "updated_at",           null: false
   end
 
-  create_table "financial_student_scores", force: :cascade do |t|
-    t.float    "self_sponsored"
-    t.float    "government_sponsored"
-    t.float    "parent_sponsored"
-    t.float    "verified"
-    t.text     "description"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "financial_trader_scores", force: :cascade do |t|
-    t.float    "business_revenue"
-    t.string   "business_type"
-    t.float    "verified"
-    t.text     "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "guarantor_score_weights", force: :cascade do |t|
     t.float    "employed_govt"
     t.float    "employed_unknow_comp"
@@ -149,17 +101,6 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.datetime "updated_at",           null: false
   end
 
-  create_table "guarantor_scores", force: :cascade do |t|
-    t.float    "employed_gov"
-    t.float    "employed_known_company"
-    t.float    "employed_unknown"
-    t.float    "demographic_data"
-    t.float    "verified"
-    t.text     "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "guarantors", force: :cascade do |t|
     t.string   "fullname"
     t.string   "business"
@@ -167,6 +108,7 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "image"
     t.index ["user_id"], name: "index_guarantors_on_user_id", using: :btree
   end
 
@@ -180,16 +122,8 @@ ActiveRecord::Schema.define(version: 20170318210646) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "degree"
+    t.string   "image"
     t.index ["user_id"], name: "index_institutions_on_user_id", using: :btree
-  end
-
-  create_table "mobile_data_scores", force: :cascade do |t|
-    t.float    "data_usage_cap"
-    t.float    "call_duration"
-    t.float    "installed_app"
-    t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "mobile_data_weights", force: :cascade do |t|

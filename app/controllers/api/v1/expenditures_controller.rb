@@ -70,6 +70,6 @@ class Api::V1::ExpendituresController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expenditure_params
-      params.require(:expenditure).permit(:expense_type, :amount, :period, :user_id)
+      params.require(:expenditure).permit(:expense_type, :amount, :period, :image)
     end
 end

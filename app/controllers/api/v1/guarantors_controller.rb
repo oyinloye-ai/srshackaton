@@ -70,6 +70,6 @@ class Api::V1::GuarantorsController < Api::V1::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guarantor_params
-      params.require(:guarantor).permit(:fullname, :business, :annual_income, :user_id)
+      params.require(:guarantor).permit(:fullname, :business, :annual_income, :image)
     end
 end
