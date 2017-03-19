@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   end
 
   def member
-    
+    @users = User.all.order('created_at DESC')
   end
 
 
