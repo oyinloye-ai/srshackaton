@@ -1,0 +1,2 @@
+class GuarantorScoreWeight < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class FinTraderWeight < ApplicationRecord
+end
