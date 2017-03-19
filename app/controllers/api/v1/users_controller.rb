@@ -12,7 +12,8 @@ class Api::V1::UsersController < Api::V1::BaseController
 	end
 
 	def show
-		@user
+                     @credit = 1
+		@credit
 		render :single_user
 	end
 
@@ -51,7 +52,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
 
-	private 
+	private
 
 	def set_user
       @user = User.find(params[:id])

@@ -1,0 +1,2 @@
+class EduScoreWeight < ApplicationRecord
+end

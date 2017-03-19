@@ -1,0 +1,2 @@
+class FinancialScoreWeight < ApplicationRecord
+end
