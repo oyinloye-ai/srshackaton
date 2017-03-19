@@ -19,3 +19,5 @@ json.extract! json.(@user, :id, :username, :firstname, :lastname, :email, :phone
 	json.expenditures @user.expenditures do |exp|
 		json.(exp, :expense_type, :amount, :period)
 	end
+
+json.credit @credit

@@ -12,6 +12,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 	end
 
 	def show
+		@credit = 1
 		@user
 		render :single_user
 	end
