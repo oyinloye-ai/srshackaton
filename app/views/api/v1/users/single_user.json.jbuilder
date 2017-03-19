@@ -20,8 +20,6 @@ json.extract! json.(@user, :id, :username, :firstname, :lastname, :email, :phone
 		json.(exp, :expense_type, :amount, :period)
 	end
 
-<<<<<<< HEAD
-json.credit @credit
-=======
+
 	json.credit @credit
->>>>>>> 5cad0546570a6daa2c865681ec7db5fe220bc5f7
+
