@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Modern an Admin Panel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+		<title>Admin</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">Agolo</a>
+					<a class="navbar-brand" href="index.html">Imperium</a>
 				</div>
 				<!-- /.navbar-header -->
 				<ul class="nav navbar-nav navbar-right">
@@ -228,7 +228,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="clearfix"> </div>
 					</div>
 					
-						<div class="col-md-4 span_8">
+						<div class="col-md-12 span_9">
 							<div class="activity_box">
 								<div class="scrollbar" id="style-2">
 									
@@ -237,21 +237,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<!--users list-->
 
-									<div class="activity-row">
-										
-										<div class="col-xs-3 activity-img"><img src='images/3.png' class="img-responsive" alt=""/></div>
-										<div class="col-xs-8 activity-desc">
-											<% @users.each do |user| %>
-											<%= image_tag user.image.thumbnail.url, alt: "" if user.image? %>
-										<h5><%= link_to user.firstname << ' ' << user.lastname, user %></h5>
-										<% end %>
-											
-											
-										</div>
-										<div class="clearfix"> </div>
-									</div>
+									
 
-													
+									<table class="table table-striped">
+		<thead>
+			<tr>
+				
+				<th><h4>Image</h4></th>
+				<th><h4>Full Name</h4></th>
+				<th><h4>Credit Score</h4></th>
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+				<% @users.each do |user| %>
+			<tr>
+				<td><%= image_tag user.image.thumbnail.url, alt: "" if user.image? %></td>
+				<td><%= link_to user.firstname << ' ' << user.lastname, user %></td>
+				<td>235</td>
+				
+				
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+
 									
 								</div>
 							</div>
@@ -259,68 +271,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						
 
 					
-						<div class="col-md-6 col_5">
-							<div id="chart_container">
-								<div id="chart"></div>
-								<div id="slider"></div>
-								<script>
-								var seriesData = [ [], [], [], [], [] ];
-								var random = new Rickshaw.Fixtures.RandomData(50);
-								for (var i = 0; i < 75; i++) {
-									random.addData(seriesData);
-								}
-								var graph = new Rickshaw.Graph( {
-									element: document.getElementById("chart"),
-									renderer: 'multi',
-									
-									dotSize: 5,
-									series: [
-										{
-											name: 'transportation',
-											data: seriesData.shift(),
-											color: '#AFE9FF',
-											renderer: 'stack'
-										}, {
-											name: 'mobile money',
-											data: seriesData.shift(),
-											color: '#FFCAC0',
-											renderer: 'stack'
-										}, {
-											name: 'rent',
-											data: seriesData.shift(),
-											color: '#555',
-											renderer: 'scatterplot'
-										}, {
-											name: 'feeding',
-											data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y / 4 } }),
-											color: '#555',
-											renderer: 'bar'
-										}, {
-											name: 'airtime',
-											data: seriesData.shift().map(function(d) { return { x: d.x, y: d.y * 1.5 } }),
-											renderer: 'line',
-											color: '#ef553a'
-										}
-									]
-								} );
-								graph.render();
-								var detail = new Rickshaw.Graph.HoverDetail({
-									graph: graph
-								});
-								</script>
-							</div>
+						
 							<!-- map -->
 
 							
 							
 
 							<!-- //map -->
-						</div>
+						
 						<div class="clearfix"> </div>
 					</div>
 					
 						<div class="copy">
-						<p>Copyright &copy; 2017 Agolo. All Rights Reserved | Design by <a href="http://meltwater.org/" target="_blank">Titans</a> </p>
+						<p>Copyright &copy; 2017 Imperium. All Rights Reserved | Design by <a href="http://meltwater.org/" target="_blank">Titans</a> </p>
 					</div>
 		<!-- /#wrapper -->
 		<!-- Bootstrap Core JavaScript -->
