@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :user_signed_in?, only: [:member]
+  
   layout "admin"
 
   include ApplicationHelper
@@ -16,6 +16,15 @@ class HomeController < ApplicationController
 
   def member
     @users = User.all.order('created_at DESC')
+  end
+
+  def destroy
+    if @user.destroy
+      redirect_to users_path
+      flash[:success] = "Organization was deleted"
+    else
+      flash[:error] = "Organization was not deleted"  
+    end
   end
 
 

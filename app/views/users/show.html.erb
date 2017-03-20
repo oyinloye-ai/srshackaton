@@ -20,6 +20,11 @@
       
 </head>
 <body>
+
+<button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button>
+<button type="button" class="btn btn-success"><%= link_to 'Back', home_member_path %> </button>
+<button type="button" class="btn btn-danger"><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> </button>
+
 <div class="container">
 <div class="row">
       <div class="col-xs-12 col-sm-9">
@@ -192,6 +197,8 @@
             <div class="profile__contact-info-body">
               <h5 class="profile__contact-info-heading">Home address</h5>
               <%=@user.address %>
+
+              <%= link_to 'Back', home_member_path %> 
             </div>
           </div>
         </div>
@@ -202,13 +209,13 @@
 
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
+
   
 </script>
 </body>
 
-
-
-
 <button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button>
-<button type="button" class="btn btn-success"><%= link_to 'Back', user_path(@user) %> </button>
+<button type="button" class="btn btn-success"><%= link_to 'Back', home_member_path %> </button>
 <button type="button" class="btn btn-danger"><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> </button>
+
