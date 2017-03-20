@@ -1,38 +1,214 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <!-- 
+      The codes are free, but we require linking to our web site.
+      Why to Link?
+      A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google! 
+      Where to Put the Link?
+      home, about, credits... or in a good page that you want
+      THANK YOU MY FRIEND!
+    -->
+    <title>Seller profile - Bootdey.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+      
+</head>
+<body>
+<div class="container">
+<div class="row">
+      <div class="col-xs-12 col-sm-9">
+        
+        <!-- User profile -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">User profile</h4>
+          
+          </div>
+          <div class="panel-body">
+            <div class="profile__avatar">
+              <%= image_tag @user.image.thumbnail.url, alt: "" if @user.image? %>
+            </div>
+            <div class="profile__header">
+              <h4><%= @employment.user.firstname %><small> <%=@employment.status %></small></h4>
+              <p class="text-muted">
+                Insufficient  data for credit score.
+              </p>
+              
+            </div>
+          </div>
+        </div>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
+        <!-- Skils -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Employment details</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Status</strong></th>
+                  <td><%=@employment.status %></td>
+                </tr>
+                <tr>
+                  <th><strong>Start date</strong></th>
+                  <td><%=@employment.start %></td>
+                </tr>
+                <tr>
+                  <th><strong>End date</strong></th>
+                  <td><%=@employment.end %></td>
+                </tr>
+                <tr>
+                  <th><strong>Average income</strong></th>
+                  <td><%=@employment.average_income %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @user.country %>
-</p>
-
-<p>
-  <strong>Phonenumber:</strong>
-  <%= @user.phonenumber %>
-</p>
-
-<p>
-  <strong>Dateofbirth:</strong>
-  <%= @user.dateofbirth %>
-</p>
-
-<p>
-  <strong>Photourl:</strong>
-  <%= image_tag @user.image.url if @user.image? %>
-</p>
+        <!-- Expenditure -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Expenditure</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Expense type</strong></th>
+                  <td><%=@expenditure.expense_type %></td>
+                </tr>
+                <tr>
+                  <th><strong>Amount</strong></th>
+                  <td><%=@expenditure.amount %></td>
+                </tr>
+                <tr>
+                  <th><strong>Time</strong></th>
+                  <td><%=@expenditure.period %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
 
+        <!-- Savings -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Savings</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Account number</strong></th>
+                  <td><%=@saving.account_number %></td>
+                </tr>
+                <tr>
+                  <th><strong>Amount</strong></th>
+                  <td><%=@saving.amount %></td>
+                </tr>
+                <tr>
+                  <th><strong>Time</strong></th>
+                  <td><%=@saving.date %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Gaurantor -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Savings</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Guarantors name</strong></th>
+                  <td><%=@guarantor.fullname %></td>
+                </tr>
+                <tr>
+                  <th><strong>Income</strong></th>
+                  <td><%=@guarantor.annual_income %></td>
+                </tr>
+                <tr>
+                  <th><strong>Business</strong></th>
+                  <td><%=@guarantor.business %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        
+
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        
+        <!-- Contact user -->
+        <p>
+          <a href="#" class="profile__contact-btn btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#profile__contact-form">
+            Contact user
+          </a>
+        </p>
+
+        <hr class="profile__contact-hr">
+        
+        <!-- Contact info -->
+        <div class="profile__contact-info">
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">Mobile numberr</h5>
+              <%=@user.phonenumber %>
+            </div>
+          </div>
+          
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-envelope-square"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">E-mail address</h5>
+              <a href="mailto:admin@domain.com"><%=@user.email %></a>
+            </div>
+          </div>
+
+          <div class="profile__contact-info-item">
+            <div class="profile__contact-info-icon">
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="profile__contact-info-body">
+              <h5 class="profile__contact-info-heading">Home address</h5>
+              <%=@user.address %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  
+</script>
+</body>
+
+
+
+
+<button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button>
+<button type="button" class="btn btn-success"><%= link_to 'Back', user_path(@user) %> </button>
+<button type="button" class="btn btn-danger"><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> </button>
