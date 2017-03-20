@@ -1,3 +1,4 @@
+Institution.destroy_all
 Expenditure.destroy_all
 Saving.destroy_all
 Guarantor.destroy_all
@@ -9,7 +10,8 @@ ayo = User.create!(
           firstname: "Ayo",
           lastname: "Deji",
           email: "ayo@gmail.com",
-          password: "ayo@gmail.com"
+          password: "ayo@gmail.com",
+          image: "https://www.google.com.gh/search?q=profile+picture&client=ubuntu&hs=NTb&channel=fs&tbm=isch&imgil=MRkhaaXe7sJabM%253A%253BhMTSPJTK0ewS3M%253Bhttp%25253A%25252F%25252Fstackoverflow.com%25252Fquestions%25252F32116103%25252Fhow-to-cache-profile-picture-with-picasso-in-materialdrawer-library&source=iu&pf=m&fir=MRkhaaXe7sJabM%253A%252ChMTSPJTK0ewS3M%252C_&usg=__QHPBYHZTQ7vfLq9dHrKk_jip1jw%3D&biw=1295&bih=608&ved=0ahUKEwic7IXU4uTSAhUCUhQKHRBfAyQQyjcIJw&ei=AaHPWNznH4KkUZC-jaAC"
             )
 ##***********************************************
 ayo.savings.create(
@@ -75,7 +77,8 @@ john = User.create!(
           firstname: "John",
           lastname: "Doe",
           email: "john@gmail.com",
-          password: "john@gmail.com"
+          password: "john@gmail.com",
+          image: "https://www.google.com.gh/search?q=profile+picture&client=ubuntu&hs=NTb&channel=fs&tbm=isch&imgil=MRkhaaXe7sJabM%253A%253BhMTSPJTK0ewS3M%253Bhttp%25253A%25252F%25252Fstackoverflow.com%25252Fquestions%25252F32116103%25252Fhow-to-cache-profile-picture-with-picasso-in-materialdrawer-library&source=iu&pf=m&fir=MRkhaaXe7sJabM%253A%252ChMTSPJTK0ewS3M%252C_&usg=__QHPBYHZTQ7vfLq9dHrKk_jip1jw%3D&biw=1295&bih=608&ved=0ahUKEwic7IXU4uTSAhUCUhQKHRBfAyQQyjcIJw&ei=AaHPWNznH4KkUZC-jaAC#imgrc=RX37p4Yvc1BKpM:"
             )
 
 john.savings.create(
@@ -133,7 +136,8 @@ mary = User.create!(
           firstname: "Mary",
           lastname: "Barke",
           email: "mary@gmail.com",
-          password: "mary@gmail.com"
+          password: "mary@gmail.com",
+          image: "https://www.google.com.gh/search?q=profile+picture&client=ubuntu&hs=NTb&channel=fs&tbm=isch&imgil=MRkhaaXe7sJabM%253A%253BhMTSPJTK0ewS3M%253Bhttp%25253A%25252F%25252Fstackoverflow.com%25252Fquestions%25252F32116103%25252Fhow-to-cache-profile-picture-with-picasso-in-materialdrawer-library&source=iu&pf=m&fir=MRkhaaXe7sJabM%253A%252ChMTSPJTK0ewS3M%252C_&usg=__QHPBYHZTQ7vfLq9dHrKk_jip1jw%3D&biw=1295&bih=608&ved=0ahUKEwic7IXU4uTSAhUCUhQKHRBfAyQQyjcIJw&ei=AaHPWNznH4KkUZC-jaAC#imgrc=Pz4gzkRXu8rhbM:"
             )
 
 mary.savings.create(
