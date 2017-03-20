@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :expenditures
   resources :guarantors
   resources :employments
- root to: 'home#index'
+ root to: 'home#member'
 
   get 'home/about'
 

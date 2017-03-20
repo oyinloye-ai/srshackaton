@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :user_signed_in?, except: [:new, :create]
+  #before_action :user_signed_in?, except: [:new, :create]
+  layout "admin"
   # GET /users
   # GET /users.json
   def index
@@ -10,6 +11,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by(params[:user_id])
+    @employment = Employment.find_by(params[:employee_id])
+    @saving = Saving.find_by(params[:saving_id])
+    @expenditure = Expenditure.find_by(params[:expenditure_id])
+    @guarantor = Guarantor.find_by(params[:guarantor_id])
   end
 
   # GET /users/new
