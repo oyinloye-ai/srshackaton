@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :user_signed_in?, only: [:member]
+  layout "admin"
 
   include ApplicationHelper
 
