@@ -19,4 +19,43 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def completed_score
+    num_of_null = 0
+    params_count.each do |key|
+    if @current_user[key] != nil
+    num_null  +=1
+    end
+  end
+
+    num_null/params_count * BioScoreWeight.completed
+
+    end
+
+
+  def bio_verified_score
+    num_null =0
+    if BioScoreWeight.verified.nil?
+      num_null =1
+    end
+    num_null
+  end
+
+  def bio_data_score
+    completed_score() + bio_verified_score()
+  end
+end
+
+
+module ScoreCalculator
+  def self.profile_score(user)
+    klass = "ScoreCalculator::#{user.shit.classify}".constantize
+    klass.new(user).call
+  end
+
+  class Base
+    def initialize(user)
+      @user = user
+    end
+  end
+
 end

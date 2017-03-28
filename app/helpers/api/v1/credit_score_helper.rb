@@ -33,6 +33,4 @@ module Api::V1::CreditScoreHelper
             def bio_data_score
                 completed_score() + bio_verified_score()
             end
-
-
 end
