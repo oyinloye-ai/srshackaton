@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319162609) do
+ActiveRecord::Schema.define(version: 20170409221721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20170319162609) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "image"
+  end
+
+  create_table "cooperatives", force: :cascade do |t|
+    t.string   "name"
+    t.string   "leader_name"
+    t.text     "description"
+    t.text     "address"
+    t.string   "government_id"
+    t.string   "affiliation"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_cooperatives_on_user_id", using: :btree
   end
 
   create_table "edu_score_weights", force: :cascade do |t|
@@ -126,12 +139,53 @@ ActiveRecord::Schema.define(version: 20170319162609) do
     t.index ["user_id"], name: "index_institutions_on_user_id", using: :btree
   end
 
+  create_table "loans", force: :cascade do |t|
+    t.string   "status"
+    t.string   "category"
+    t.string   "purpose"
+    t.string   "description"
+    t.integer  "interest_rate"
+    t.datetime "start_date"
+    t.datetime "final_date"
+    t.integer  "user_id"
+    t.float    "requested_amount"
+    t.float    "purpose_amount"
+    t.float    "agreed_amount"
+    t.integer  "payment_frequency"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["user_id"], name: "index_loans_on_user_id", using: :btree
+  end
+
+  create_table "mobile_data", force: :cascade do |t|
+    t.float    "call_duration"
+    t.string   "receiver"
+    t.string   "sender"
+    t.string   "handset_used"
+    t.float    "data_usage"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_mobile_data_on_user_id", using: :btree
+  end
+
   create_table "mobile_data_weights", force: :cascade do |t|
     t.float    "data_usage"
     t.float    "call_duration"
     t.float    "installing_app"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.datetime "due_date"
+    t.datetime "paid_date"
+    t.integer  "loan_id"
+    t.float    "amount_paid"
+    t.boolean  "payment_defaulted"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["loan_id"], name: "index_payments_on_loan_id", using: :btree
   end
 
   create_table "savings", force: :cascade do |t|
@@ -160,9 +214,13 @@ ActiveRecord::Schema.define(version: 20170319162609) do
     t.string   "username"
   end
 
+  add_foreign_key "cooperatives", "users"
   add_foreign_key "employments", "users"
   add_foreign_key "expenditures", "users"
   add_foreign_key "guarantors", "users"
   add_foreign_key "institutions", "users"
+  add_foreign_key "loans", "users"
+  add_foreign_key "mobile_data", "users"
+  add_foreign_key "payments", "loans"
   add_foreign_key "savings", "users"
 end

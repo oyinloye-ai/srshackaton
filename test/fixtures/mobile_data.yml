@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  call_duration: 1.5
+  receiver: MyString
+  sender: MyString
+  handset_used: MyString
+  data_usage: 1.5
+  user: one
+
+two:
+  call_duration: 1.5
+  receiver: MyString
+  sender: MyString
+  handset_used: MyString
+  data_usage: 1.5
+  user: two

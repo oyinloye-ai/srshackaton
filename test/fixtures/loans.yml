@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  category: MyString
+  purpose: MyString
+  description: MyString
+  interest_rate: 1
+  start_date: 2017-04-10 00:11:01
+  final_date: 2017-04-10 00:11:01
+  user: one
+  requested_amount: 1.5
+  purpose_amount: 1.5
+  agreed_amount: 1.5
+  payment_frequency: 1
+
+two:
+  status: MyString
+  category: MyString
+  purpose: MyString
+  description: MyString
+  interest_rate: 1
+  start_date: 2017-04-10 00:11:01
+  final_date: 2017-04-10 00:11:01
+  user: two
+  requested_amount: 1.5
+  purpose_amount: 1.5
+  agreed_amount: 1.5
+  payment_frequency: 1
