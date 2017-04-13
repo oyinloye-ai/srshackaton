@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Called at:</strong>
+  <%= @dailup.called_at %>
+</p>
+
+<p>
+  <strong>Number called:</strong>
+  <%= @dailup.number_called %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @dailup.duration %>
+</p>
+
+<%= link_to 'Edit', edit_dailup_path(@dailup) %> |
+<%= link_to 'Back', dailups_path %>

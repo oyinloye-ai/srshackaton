@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dailups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Called at</th>
+      <th>Number called</th>
+      <th>Duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dailups.each do |dailup| %>
+      <tr>
+        <td><%= dailup.called_at %></td>
+        <td><%= dailup.number_called %></td>
+        <td><%= dailup.duration %></td>
+        <td><%= link_to 'Show', dailup %></td>
+        <td><%= link_to 'Edit', edit_dailup_path(dailup) %></td>
+        <td><%= link_to 'Destroy', dailup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dailup', new_dailup_path %>

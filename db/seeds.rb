@@ -1,3 +1,5 @@
+Dailup.destroy_all
+Message.destroy_all
 Institution.destroy_all
 Expenditure.destroy_all
 Saving.destroy_all
@@ -71,6 +73,48 @@ ayo.institutions.create(
             degree:"BSc"
               )
 
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 50
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 600
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 100
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 300
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 3.days,
+            number_called: "0803-802-2345",
+            duration: 34
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 10.days,
+            number_called: "0803-802-2345",
+            duration: 90
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 15.days,
+            number_called: "0803-802-2345",
+            duration: 150
+            )
+
 ##***********************************************##
 ##***********************************************##
 john = User.create!(
@@ -128,6 +172,48 @@ john.institutions.create(
             loan: "No",
             degree:"BSc"
               )
+
+john.messages.create(
+            sent_at: DateTime.now - 28.days,
+            content: "Some gibberish message",
+            amount: 90
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 24.days,
+            content: "Some gibberish message",
+            amount: 500
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 200
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 10.days,
+            content: "Some gibberish message",
+            amount: 30
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 1.days,
+            number_called: "0803-802-2345",
+            duration: 34
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 10.days,
+            number_called: "0803-802-2345",
+            duration: 90
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 15.days,
+            number_called: "0803-802-2345",
+            duration: 150
+            )
 
 
 ##***********************************************##
