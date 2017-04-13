@@ -12,80 +12,88 @@
         <div class="panel panel-default">
           <div class="panel-heading">
           <h4 class="panel-title">User profile</h4>
-          
           </div>
           <div class="panel-body">
             <div class="profile__avatar">
               <%= image_tag @user.image.thumbnail.url, alt: "" if @user.image? %>
             </div>
             <div class="profile__header">
-              <h4><%= @employment.user.firstname %><small> <%=@employment.status %></small></h4>
+              <h4><%= @user.firstname %><small> <%=@user.lastname%></small></h4>
               <p class="text-muted">
                 Your credit score.
               </p>
+
               
             </div>
           </div>
         </div>
 
-        <!-- Skils -->
+
+       <!-- Skils -->
         <div class="panel panel-default">
           <div class="panel-heading">
           <h4 class="panel-title">Employment details</h4>
           </div>
           <div class="panel-body">
-            <table class="table profile__table">
-              <tbody>
-                <tr>
-                  <th><strong>Status</strong></th>
-                  <td><%=@employment.status %></td>
-                </tr>
-                <tr>
-                  <th><strong>Start date</strong></th>
-                  <td><%=@employment.start %></td>
-                </tr>
-                <tr>
-                  <th><strong>End date</strong></th>
-                  <td><%=@employment.end %></td>
-                </tr>
-                <tr>
-                  <th><strong>Average income</strong></th>
-                  <td><%=@employment.average_income %></td>
-                </tr>
-                 <tr>
-                  <th><strong>Score</strong></th>
-                  <td>80</td>
-                </tr>
-              </tbody>
-            </table>
+            
+              <table class="table profile__table">
+                <% @user.employments.each do |employment| %>
+                <tbody>
+                  <tr>
+                    <th><strong>Status</strong></th>
+                    <td><%= employment.status %></td>
+                  </tr>
+                  <tr>
+                    <th><strong>Start date</strong></th>
+                    <td><%= employment.start %></td>
+                  </tr>
+                  <tr>
+                    <th><strong>End date</strong></th>
+                    <td><%= employment.end %></td>
+                  </tr>
+                  <tr>
+                    <th><strong>Average income</strong></th>
+                    <td><%= employment.average_income %></td>
+                  </tr>
+                   <tr>
+                    <th><strong>Score</strong></th>
+                    <td>80</td>
+                  </tr>
+                </tbody>
+                <% end %>    
+              </table>
+            
           </div>
         </div>
+
 
         <!-- Expenditure -->
         <div class="panel panel-default">
           <div class="panel-heading">
-          <h4 class="panel-title">Expenditure</h4>
+          <h4 class="panel-title">Expenditures</h4>
           </div>
           <div class="panel-body">
             <table class="table profile__table">
+              <% @user.expenditures.each do |expenditure| %>
               <tbody>
                 <tr>
                   <th><strong>Expense type</strong></th>
-                  <td><%=@expenditure.expense_type %></td>
+                  <td><%= expenditure.expense_type %></td>
                 </tr>
                 <tr>
                   <th><strong>Amount</strong></th>
-                  <td><%=@expenditure.amount %></td>
+                  <td><%= expenditure.amount %></td>
                 </tr>
                 <tr>
                   <th><strong>Time</strong></th>
-                  <td><%=@expenditure.period %></td>
+                  <td><%= expenditure.period %></td>
                 </tr>
                  <tr>
                   <th><strong>Score</strong></th>
                   <td>40</td>
                 </tr>
               </tbody>
+              <% end %>
             </table>
           </div>
         </div>
@@ -98,24 +106,26 @@
           </div>
           <div class="panel-body">
             <table class="table profile__table">
+              <% @user.savings.each do |saving| %>
               <tbody>
                 <tr>
                   <th><strong>Account number</strong></th>
-                  <td><%=@saving.account_number %></td>
+                  <td><%=saving.account_number %></td>
                 </tr>
                 <tr>
                   <th><strong>Amount</strong></th>
-                  <td><%=@saving.amount %></td>
+                  <td><%=saving.amount %></td>
                 </tr>
                 <tr>
                   <th><strong>Time</strong></th>
-                  <td><%=@saving.date %></td>
+                  <td><%=saving.date %></td>
                 </tr>
                  <tr>
                   <th><strong>Score</strong></th>
                   <td>60</td>
                 </tr>
               </tbody>
+              <% end %>
             </table>
           </div>
         </div>
@@ -127,24 +137,26 @@
           </div>
           <div class="panel-body">
             <table class="table profile__table">
+              <% @user.guarantors.each do |guarantor| %>
               <tbody>
                 <tr>
                   <th><strong>Guarantors name</strong></th>
-                  <td><%=@guarantor.fullname %></td>
+                  <td><%=guarantor.fullname %></td>
                 </tr>
                 <tr>
                   <th><strong>Income</strong></th>
-                  <td><%=@guarantor.annual_income %></td>
+                  <td><%=guarantor.annual_income %></td>
                 </tr>
                 <tr>
                   <th><strong>Business</strong></th>
-                  <td><%=@guarantor.business %></td>
+                  <td><%=guarantor.business %></td>
                 </tr>
                  <tr>
                   <th><strong>Score</strong></th>
                   <td>35</td>
                 </tr>
               </tbody>
+              <% end %>
             </table>
           </div>
         </div>

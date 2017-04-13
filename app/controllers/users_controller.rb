@@ -11,11 +11,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find_by(params[:user_id])
-    @employment = Employment.find_by(params[:employee_id])
-    @saving = Saving.find_by(params[:saving_id])
-    @expenditure = Expenditure.find_by(params[:expenditure_id])
-    @guarantor = Guarantor.find_by(params[:guarantor_id])
+    #@user = User.find_by(params[:user_id])
+    # @employment = Employment.find_by(params[:employee_id])
+    # @saving = Saving.find_by(params[:saving_id])
+    # @expenditure = Expenditure.find_by(params[:expenditure_id])
+    # @guarantor = Guarantor.find_by(params[:guarantor_id])
   end
 
   # GET /users/new
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
-
+ 
   # POST /users
   # POST /users.json
   def create
