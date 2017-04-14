@@ -155,9 +155,9 @@ class Loan < ApplicationRecord
         update(arguments)
       end
 
-    def self.credit_score
+    def credit_score
       payment_credit_score = 20
-      payment = most_recent__due_payment
+      payment = most_recent_due_payment
       due_date = payment.due_date
 
       if due_date.nil?
@@ -174,7 +174,7 @@ class Loan < ApplicationRecord
           payment_credit_score = 75
       end
 
-      order(start_date: :desc).where(status: "Loan Repaid").joins(:payments).where('payments.due_date < ?', payments.paid_date).where(payments: { paid: false })
+
 
     end
 

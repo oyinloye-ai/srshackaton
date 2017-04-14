@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <!-- 
+    <!--
       The codes are free, but we require linking to our web site.
       Why to Link?
-      A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google! 
+      A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
       Where to Put the Link?
       home, about, credits... or in a good page that you want
       THANK YOU MY FRIEND!
@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    
-      
+
+
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 <div class="container">
 <div class="row">
       <div class="col-xs-12 col-sm-9">
-        
+
         <!-- User profile -->
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -44,7 +44,7 @@
                 Insufficient  data for credit score.
               </p>
 
-              
+
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <h4 class="panel-title">Employment details</h4>
           </div>
           <div class="panel-body">
-            
+
               <table class="table profile__table">
                 <% @user.employments.each do |employment| %>
                 <tbody>
@@ -80,10 +80,17 @@
                     <th><strong>Score</strong></th>
                     <td>80</td>
                   </tr>
+
+                  <tr>
+
+                    <th><strong>Payment Score</strong>></th>
+                    <td><strong>user.loans.last.credit_score</strong></td>
+
+                  </tr>
                 </tbody>
-                <% end %>    
+                <% end %>
               </table>
-            
+
           </div>
         </div>
 
@@ -199,11 +206,11 @@
           </div>
         </div>
 
-        
+
 
       </div>
       <div class="col-xs-12 col-sm-3">
-        
+
         <!-- Contact user -->
         <p>
           <a href="#" class="profile__contact-btn btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#profile__contact-form">
@@ -212,7 +219,7 @@
         </p>
 
         <hr class="profile__contact-hr">
-        
+
         <!-- Contact info -->
         <div class="profile__contact-info">
           <div class="profile__contact-info-item">
@@ -224,7 +231,7 @@
               <%=@user.phonenumber %>
             </div>
           </div>
-          
+
           <div class="profile__contact-info-item">
             <div class="profile__contact-info-icon">
               <i class="fa fa-envelope-square"></i>
@@ -243,7 +250,7 @@
               <h5 class="profile__contact-info-heading">Home address</h5>
               <h5>No 54 Aluguntugunt Street, East Legon,Accra.</h5>
 
-              <%= link_to 'Back', home_member_path %> 
+              <%= link_to 'Back', home_member_path %>
             </div>
           </div>
         </div>
@@ -256,7 +263,7 @@
 <script type="text/javascript">
 
 
-  
+
 </script>
 </body>
 
