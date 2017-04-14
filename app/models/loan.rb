@@ -137,7 +137,7 @@ class Loan < ApplicationRecord
 
       #OUTSTANDING LOAN CLASSIFICATION
       def loan_classification
-              if status == "Loan Outstanding" && most_recent__due_payment.present?
+              if status == "Loan Outstanding" && most_recent_due_payment.present?
                     if any_missed_payemnt?
                       "Missed Paymend"
                     elsif any_delayed_payment?
@@ -156,24 +156,27 @@ class Loan < ApplicationRecord
       end
 
     def credit_score
-      payment_credit_score = 20
-      payment = most_recent_due_payment
-      due_date = payment.due_date
 
-      if due_date.nil?
-          if due_date > 24.day
-            payment_credit_score = 55
-          elsif due_date >11
-            payment_credit_score =25
-          elsif due_date > 5
-            payment_credit_score = 15
+      if most_recent_due_payment.present?
+          payment = most_recent_due_payment
+          due_date = payment.due_date
+
+          if due_date.nil?
+              if due_date > 24.day
+                payment_credit_score = 55
+              elsif due_date >11
+                payment_credit_score =25
+              elsif due_date > 5
+                payment_credit_score = 15
+              else
+                payment_credit_score = 10
+              end
           else
-            payment_credit_score = 10
+              payment_credit_score = 75
           end
       else
-          payment_credit_score = 75
+        payment_credit_score = 20
       end
-
 
 
     end
