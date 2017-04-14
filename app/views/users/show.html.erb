@@ -237,6 +237,7 @@
           </div>
         </div>
 
+       <%= @user.loans.last.credit_score %>
        
 
         <!-- Gaurantor -->
@@ -256,6 +257,38 @@
           </div>
         </div>
 
+
+     <!-- Phone Calls -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Loans Calls</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <% @user.dailups.each do |call| %>
+              <tbody>
+                <tr>
+                  <th><strong>Call Time</strong></th>
+                  <td><%= call.called_at %></td>
+                </tr>
+                <tr>
+                  <th><strong>Amount</strong></th>
+                  <td><%= call.number_called %></td>
+                </tr>
+                <tr>
+                  <th><strong>Time</strong></th>
+                  <td><%= call.duration %></td>
+                </tr>
+                 <tr>
+                  <th><strong>Score</strong></th>
+                  <td><%= call.call_score %></td>
+                  <% total += call.call_score %>
+                </tr>
+              </tbody>
+              <% end %>
+            </table>
+          </div>
+        </div>
 
 
       </div>

@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170413110157) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_cooperatives_on_user_id", using: :btree
+  end
 
   create_table "dailups", force: :cascade do |t|
     t.datetime "called_at"
@@ -147,7 +148,6 @@ ActiveRecord::Schema.define(version: 20170413110157) do
     t.index ["user_id"], name: "index_institutions_on_user_id", using: :btree
   end
 
-
   create_table "loans", force: :cascade do |t|
     t.string   "status"
     t.string   "category"
@@ -167,6 +167,15 @@ ActiveRecord::Schema.define(version: 20170413110157) do
     t.index ["user_id"], name: "index_loans_on_user_id", using: :btree
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.datetime "sent_at"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.float    "amount"
+  end
+
   create_table "mobile_data", force: :cascade do |t|
     t.float    "call_duration"
     t.string   "receiver"
@@ -177,14 +186,6 @@ ActiveRecord::Schema.define(version: 20170413110157) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["user_id"], name: "index_mobile_data_on_user_id", using: :btree
-
-  create_table "messages", force: :cascade do |t|
-    t.datetime "sent_at"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.float    "amount"
   end
 
   create_table "mobile_data_weights", force: :cascade do |t|

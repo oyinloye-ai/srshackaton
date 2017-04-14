@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 require "json"
 ##TODO:
       #Create a gem that allow the creation of dummy data for specific projects
 
 
-=======
 Dailup.destroy_all
 Message.destroy_all
->>>>>>> newbranch
 Institution.destroy_all
 Expenditure.destroy_all
 Saving.destroy_all
@@ -270,103 +267,7 @@ end
 end
 
 
-# #Application Declined
-# 20.times  do
-#         user = @dummy.sample
-#             #Not to have duplicate user
-#         @dummy.delete(user)
-#         user_declined = User.create!(
-#                                     firstname: (user["firstname"]).to_s,
-#                                     lastname: (user["lastname"]).to_s,
-#                                     email: (user["email"]).to_s,
-#                                     password: (user["password"]).to_s,
-#                                     phonenumber: "+"+ (user["phonenumber"]).to_s,
-#                                     country: @country_ary.sample,
-#                                     image:(@image_ary.sample).to_s
-#                                     )
 
-
-#         #Adding loan data of the User
-#         category = @category_ary.sample
-#         category == "Personal" ? purpose = @purpose_perso_ary.sample : purpose = @purpose_business_ary.sample
-#         loan = user_declined.loans.build(
-#                                   category: category,
-#                                   status:"Application Declined",
-#                                   requested_amount_cents: rand(100...15000).round(-2),
-#                                   decline_reason: @decline_reason_ary.sample)
-#         loan.update!(proposed_amount_cents: loan.requested_amount_cents)
-#         loan.category == "Personal" ? loan.update!(purpose: @purpose_perso_ary.sample) : loan.update!(purpose: @purpose_business_ary.sample)
-#         loan.save
-# end
-
-# #Loan Outstanding
-# 30.times  do
-#         user = @dummy.sample
-#             #Not to have duplicate user
-#         @dummy.delete(user)
-#         user_outstanding = User.create!(
-#                                             firstname: (user["firstname"]).to_s,
-#                                             lastname: (user["lastname"]).to_s,
-#                                             email: (user["email"]).to_s,
-#                                             password: (user["password"]).to_s,
-#                                             phonenumber: "+"+ (user["phonenumber"]).to_s,
-#                                             country: @country_ary.sample,
-#                                             image:(@image_ary.sample).to_s
-#                                             )
-
-
-#         #Adding loan data of the User
-#         category = @category_ary.sample
-#         category == "Personal" ? purpose = @purpose_perso_ary.sample : purpose = @purpose_business_ary.sample
-#         loan = user_outstanding.loans.build(
-#                                           category: category,
-#                                           status:"Loan Outstanding",
-#                                           requested_amount_cents: rand(100...15000).round(-2),
-#                                           start_date: Time.now - rand(0..21).day
-#                                           )
-#         loan.update!(proposed_amount_cents: (loan.requested_amount_cents), updated_at: DateTime.now - rand(0..21).day)
-#         loan.category == "Personal" ? loan.update!(purpose: @purpose_perso_ary.sample) : loan.update!(purpose: @purpose_business_ary.sample)
-#         loan.update!(agreed_amount_cents: (loan.requested_amount_cents- 50), payment_frequency: rand(1...12), final_date:  loan.start_date + rand(0..120).day)
-# #TODO: Make sure that the payment have not being done
-#         loan.save
-
-# end
-
-# #loan Repaid
-# 10.times  do
-#         user = @dummy.sample
-#             #Not to have duplicate user
-#         @dummy.delete(user)
-#         user_loanrepaid = User.create!(
-#                                         firstname: (user["firstname"]).to_s,
-#                                         lastname: (user["lastname"]).to_s,
-#                                         email: (user["email"]).to_s,
-#                                         password: (user["password"]).to_s,
-#                                         phonenumber: "+"+ (user["phonenumber"]).to_s,
-#                                         country: @country_ary.sample,
-#                                         image:(@image_ary.sample).to_s
-#                                         )
-
-
-#         #Adding loan data of the User
-#         category = @category_ary.sample
-#         category == "Personal" ? purpose = @purpose_perso_ary.sample : purpose = @purpose_business_ary.sample
-#         loan = user_loanrepaid.loans.build(
-#                                       category: category,
-#                                       status:"Loan Repaid",
-#                                       requested_amount_cents: rand(100...15000).round(-2),
-#                                       start_date: DateTime.now-rand(1..120).day
-#                                       )
-#         loan.update!(proposed_amount_cents: loan.requested_amount_cents, updated_at: DateTime.now - rand(0..21).day)
-#         loan.category == "Personal" ? loan.update!(purpose: @purpose_perso_ary.sample) : loan.update!(purpose: @purpose_business_ary.sample)
-#         loan.update!(agreed_amount_cents: loan.requested_amount_cents, payment_frequency: rand(1...6), final_date:  loan.start_date + rand(6..12).day)
-#         #TODO: Make sure the frequency talies with the date that the loan is finalized.
-#         #Example. A loan can not have a start day Monday the 26, 2017 and have
-#         loan.save
-# end
-
-<<<<<<< HEAD
-=======
 ayo = User.create!(
           firstname: "Ayo",
           lastname: "Deji",
@@ -637,4 +538,3 @@ mary.institutions.create(
             loan: "No",
             degree:"BSc"
               )
->>>>>>> newbranch

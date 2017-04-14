@@ -77,3 +77,4 @@ gem 'cloudinary'
 
 gem 'rack-cors'
 
+

@@ -27,10 +27,7 @@ class Payment < ApplicationRecord
     else
         false
     end
-
-
   end
-
 
 
   # extend ActiveModel::Callbacks
