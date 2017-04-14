@@ -27,6 +27,8 @@ class Payment < ApplicationRecord
     else
         false
     end
+
+
   end
 
 
