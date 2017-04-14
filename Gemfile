@@ -69,3 +69,5 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'cloudinary'
 
 gem 'rack-cors'
+
+gem 'rack-synctime'

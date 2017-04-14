@@ -75,25 +75,35 @@ ayo.institutions.create(
 
 ayo.messages.create(
             sent_at: DateTime.now - 20.days,
-            content: "Some gibberish message",
+            content: "Cash In received for GHS 5.00 from DIVINE 
+            KAFUI AKPALU TSC GR -. Current Balance GHS 50.00  
+            Available Balance GHS 50.00. Cash in (Deposit) is a free 
+            transaction on MTN Mobile Money. Please do not pay any fees for it. 
+              Thank you for using MTN MobileMoney. Fee charged: GHS 0.",
             amount: 50
             )
 
 ayo.messages.create(
-            sent_at: DateTime.now - 20.days,
-            content: "Some gibberish message",
-            amount: 600
+            sent_at: DateTime.now - 10.days,
+            content: "Money Transfer Deposit received for GHS 75.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 1344240865. 
+            TRANSACTION FEE IS 0",
+            amount: 75
             )
 
 ayo.messages.create(
             sent_at: DateTime.now - 20.days,
-            content: "Some gibberish message",
+            content: "Money Transfer Deposit received for GHS 100.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 1344870890. 
+            TRANSACTION FEE IS 0",
             amount: 100
             )
 
 ayo.messages.create(
-            sent_at: DateTime.now - 20.days,
-            content: "Some gibberish message",
+            sent_at: DateTime.now - 15.days,
+            content: "Money Transfer Deposit received for GHS 300.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 2344240865. 
+            TRANSACTION FEE IS 0",
             amount: 300
             )
 
