@@ -32,7 +32,27 @@
           </div>
         </div>
 
+<<<<<<< HEAD
         <% total = 0 %>
+=======
+         <!-- Payment Credit-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Loan Credit Score</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <tbody>
+                <tr>
+                  <th><strong>Payment Credit Score</strong></th>
+                  <td><%=@user.loans.last.credit_score %></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+>>>>>>> 13bf9cb251e5389233e6a5b4547cde7105d513b1
 
        <!-- Skils -->
         <div class="panel panel-default">
@@ -238,7 +258,6 @@
         </div>
 
        <%= @user.loans.last.credit_score %>
-       
 
         <!-- Gaurantor -->
         <div class="panel panel-default">
