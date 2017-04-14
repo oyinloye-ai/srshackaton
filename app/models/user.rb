@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :guarantors
   has_many :institutions
   has_many :expenditures
+  has_many :loans
   #A users activity shouldn't leave because they leave the platform
   #handle in a better way
   #Add a db column to make users active or inactive so on destroy
@@ -15,7 +16,7 @@ class User < ApplicationRecord
 
   # validates :username,  :presence => true, :uniqueness => true
   validates :email,     :presence => true, :uniqueness => true, :format => /@/
-  validates_length_of   :password, :in => 4..20, :on => :create
+  validates_length_of   :password, :in => 4..200, :on => :create
 
   mount_uploader :image, ImageUploader
 

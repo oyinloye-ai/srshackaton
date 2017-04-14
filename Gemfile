@@ -37,15 +37,22 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Money gem for amounts
+gem 'money-rails'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
 
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+  gem 'pry'
+
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -69,3 +76,6 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'cloudinary'
 
 gem 'rack-cors'
+
+#windows issues
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

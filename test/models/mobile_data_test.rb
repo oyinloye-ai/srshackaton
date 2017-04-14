@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MobileDatumTest < ActiveSupport::TestCase
+class MobileDataTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
