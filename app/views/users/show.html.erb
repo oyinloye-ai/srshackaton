@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <!--  This file has been downloaded from bootdey.com    @bootdey on twitter -->
-    <!--  All snippets are MIT license http://bootdey.com/license -->
-    <!--
-      The codes are free, but we require linking to our web site.
-      Why to Link?
-      A true story: one girl didn't set a link and had no decent date for two years, and another guy set a link and got a top ranking in Google!
-      Where to Put the Link?
-      home, about, credits... or in a good page that you want
-      THANK YOU MY FRIEND!
-    -->
-    <title>Seller profile - Bootdey.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-
-</head>
-<body>
-
-<button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button>
-<button type="button" class="btn btn-success"><%= link_to 'Back', home_member_path %> </button>
-<button type="button" class="btn btn-danger"><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> </button>
-
 <div class="container">
+<div class="row">
+  <div class="col-md-4">
+  </div> 
+  <div class="col-md-4 somespace">
+      <!-- <button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button> -->
+      <%= link_to 'Back', root_path, :class=>"btn btn-primary" %>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
 <div class="row">
       <div class="col-xs-12 col-sm-9">
 
@@ -41,7 +24,7 @@
             <div class="profile__header">
               <h4><%= @user.firstname %><small> <%=@user.lastname%></small></h4>
               <p class="text-muted">
-                Insufficient  data for credit score.
+                Your credit score.
               </p>
 
 
@@ -49,6 +32,7 @@
           </div>
         </div>
 
+        <% total = 0 %>
 
        <!-- Skils -->
         <div class="panel panel-default">
@@ -189,6 +173,72 @@
           </div>
         </div>
 
+         <!-- Phone messages-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Messages</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <% @user.messages.each do |message| %>
+              <tbody>
+                <tr>
+                  <th><strong>Time sent</strong></th>
+                  <td><%= message.sent_at %></td>
+                </tr>
+                <tr>
+                  <th><strong>Content</strong></th>
+                  <td><%= message.content %></td>
+                </tr>
+                <tr>
+                  <th><strong>Amount</strong></th>
+                  <td><%= message.amount %></td>
+                </tr>
+                 <tr>
+                  <th><strong>Score</strong></th>
+                  <td><%= message.call_score %></td>
+                  <% total += message.call_score %>
+                </tr>
+              </tbody>
+              <% end %>
+            </table>
+          </div>
+        </div>
+
+         <!-- Phone Calls -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Phone Calls</h4>
+          </div>
+          <div class="panel-body">
+            <table class="table profile__table">
+              <% @user.dailups.each do |call| %>
+              <tbody>
+                <tr>
+                  <th><strong>Call Time</strong></th>
+                  <td><%= call.called_at %></td>
+                </tr>
+                <tr>
+                  <th><strong>Amount</strong></th>
+                  <td><%= call.number_called %></td>
+                </tr>
+                <tr>
+                  <th><strong>Time</strong></th>
+                  <td><%= call.duration %></td>
+                </tr>
+                 <tr>
+                  <th><strong>Score</strong></th>
+                  <td><%= call.call_score %></td>
+                  <% total += call.call_score %>
+                </tr>
+              </tbody>
+              <% end %>
+            </table>
+          </div>
+        </div>
+
+       
+
         <!-- Gaurantor -->
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -199,7 +249,7 @@
               <tbody>
                 <tr>
                   <th><strong>Total</strong></th>
-                  <td>215</td>
+                  <td><%= total %></td>
                 </tr>
               </tbody>
             </table>
@@ -265,9 +315,5 @@
 
 
 </script>
-</body>
 
-<button type="button" class="btn btn-primary"><%= link_to 'Edit', user_path(@user) %> </button>
-<button type="button" class="btn btn-success"><%= link_to 'Back', home_member_path %> </button>
-<button type="button" class="btn btn-danger"><%= link_to "Delete", user_path(@user), method: :delete, data: { confirm: "Are you sure?" } %> </button>
 

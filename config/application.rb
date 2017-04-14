@@ -11,8 +11,10 @@ module Stakeit
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # config.time_zone = my tmz
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.autoload_paths << Rails.root.join('lib')
     config.eager_load_paths << Rails.root.join('lib')
+     config.middleware.use Rack::Synctime
   end
 end

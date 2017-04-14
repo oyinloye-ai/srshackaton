@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 require "json"
 ##TODO:
       #Create a gem that allow the creation of dummy data for specific projects
 
 
+=======
+Dailup.destroy_all
+Message.destroy_all
+>>>>>>> newbranch
 Institution.destroy_all
 Expenditure.destroy_all
 Saving.destroy_all
@@ -360,3 +365,276 @@ end
 #         loan.save
 # end
 
+<<<<<<< HEAD
+=======
+ayo = User.create!(
+          firstname: "Ayo",
+          lastname: "Deji",
+          email: "ayo@gmail.com",
+          password: "ayo@gmail.com",
+          remote_image_url: "https://d3iw72m71ie81c.cloudfront.net/female-4.jpg"
+            )
+##***********************************************
+ayo.savings.create(
+            account_number: "1234567890",
+            amount: 179.0,
+            date: DateTime.now - 5.days
+              )
+ayo.savings.create(
+            account_number: "1234567890",
+            amount: 400.0,
+            date: DateTime.now - 30.days
+              )
+
+ayo.savings.create(
+            account_number: "1234567890",
+            amount: 1000.0,
+            date: DateTime.now - 20.days
+              )
+
+
+ayo.guarantors.create(
+            fullname: "John Bull",
+            business: "Forex Entertainments",
+            annual_income: 1300983.89
+              )
+
+ayo.employments.create(
+            status: "Self-Employed",
+            start: DateTime.now - 10.years,
+            average_income: 60000
+              )
+
+
+ayo.expenditures.create(
+            expense_type: "Rent",
+            amount: 267.88,
+            period: 23
+              )
+
+ayo.expenditures.create(
+            expense_type: "Transportation",
+            amount: 3000.45,
+            period: 23
+              )
+
+ayo.expenditures.create(
+            expense_type: "Utility Bill",
+            amount: 267.88,
+            period: 23
+              )
+
+ayo.institutions.create(
+            name: "University of Ghana",
+            start: DateTime.now - 10.years,
+            end: DateTime.now - 5.years,
+            loan: "No",
+            degree:"BSc"
+              )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Cash In received for GHS 5.00 from DIVINE 
+            KAFUI AKPALU TSC GR -. Current Balance GHS 50.00  
+            Available Balance GHS 50.00. Cash in (Deposit) is a free 
+            transaction on MTN Mobile Money. Please do not pay any fees for it. 
+              Thank you for using MTN MobileMoney. Fee charged: GHS 0.",
+            amount: 50
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 10.days,
+            content: "Money Transfer Deposit received for GHS 75.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 1344240865. 
+            TRANSACTION FEE IS 0",
+            amount: 75
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Money Transfer Deposit received for GHS 100.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 1344870890. 
+            TRANSACTION FEE IS 0",
+            amount: 100
+            )
+
+ayo.messages.create(
+            sent_at: DateTime.now - 15.days,
+            content: "Money Transfer Deposit received for GHS 300.00 
+            from SANTOSH NAIR Token: 397121244007 Transaction ID: 2344240865. 
+            TRANSACTION FEE IS 0",
+            amount: 300
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 3.days,
+            number_called: "0803-802-2345",
+            duration: 34
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 10.days,
+            number_called: "0803-802-2345",
+            duration: 90
+            )
+
+ayo.dailups.create(
+            called_at: DateTime.now - 15.days,
+            number_called: "0803-802-2345",
+            duration: 150
+            )
+
+##***********************************************##
+##***********************************************##
+john = User.create!(
+          firstname: "John",
+          lastname: "Doe",
+          email: "john@gmail.com",
+          password: "john@gmail.com",
+          remote_image_url: "https://d3iw72m71ie81c.cloudfront.net/female-7.jpg"
+            )
+
+john.savings.create(
+            account_number: "1234567890",
+            amount: 179.0,
+            date: DateTime.now - 5.days
+              )
+john.savings.create(
+            account_number: "1234567890",
+            amount: 400.0,
+            date: DateTime.now - 10.days
+              )
+
+john.employments.create(
+            status: "Unemployed",
+              )
+
+
+john.guarantors.create(
+            fullname: "Mike Adenuga",
+            business: "Galaxy TV",
+            annual_income: 130098388.89
+              )
+
+john.expenditures.create(
+            expense_type: "Rent",
+            amount: 900.88,
+            period: 23
+              )
+
+john.expenditures.create(
+            expense_type: "Transportation",
+            amount: 300.45,
+            period: 23
+              )
+
+john.expenditures.create(
+            expense_type: "Utility Bill",
+            amount: 567.88,
+            period: 23
+              )
+
+john.institutions.create(
+            name: "University of Ghana",
+            start: DateTime.now - 20.years,
+            end: DateTime.now - 15.years,
+            loan: "No",
+            degree:"BSc"
+              )
+
+john.messages.create(
+            sent_at: DateTime.now - 28.days,
+            content: "Some gibberish message",
+            amount: 90
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 24.days,
+            content: "Some gibberish message",
+            amount: 500
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 20.days,
+            content: "Some gibberish message",
+            amount: 200
+            )
+
+john.messages.create(
+            sent_at: DateTime.now - 10.days,
+            content: "Some gibberish message",
+            amount: 30
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 1.days,
+            number_called: "0803-802-2345",
+            duration: 34
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 10.days,
+            number_called: "0803-802-2345",
+            duration: 90
+            )
+
+john.dailups.create(
+            called_at: DateTime.now - 15.days,
+            number_called: "0803-802-2345",
+            duration: 150
+            )
+
+
+##***********************************************##
+##***********************************************##
+mary = User.create!(
+          firstname: "Mary",
+          lastname: "Barke",
+          email: "mary@gmail.com",
+          password: "mary@gmail.com",
+          remote_image_url: "https://d3iw72m71ie81c.cloudfront.net/female-7.jpg"
+            )
+
+mary.savings.create(
+            account_number: "1234567890",
+            amount: 1000.0,
+              )
+
+mary.employments.create(
+            status: "Employed",
+            start: DateTime.now - 5.years,
+            average_income: 60000
+              )
+
+mary.guarantors.create(
+            fullname: "Misty Gerald",
+            business: "Mist designs",
+            annual_income: 19300000.89
+              )
+
+mary.expenditures.create(
+            expense_type: "Rent",
+            amount: 19000.88,
+            period: 23
+              )
+
+mary.expenditures.create(
+            expense_type: "Transportation",
+            amount: 6500.45,
+            period: 23
+              )
+
+mary.expenditures.create(
+            expense_type: "Utility Bill",
+            amount: 1567.88,
+            period: 23
+              )
+
+mary.institutions.create(
+            name: "University of Ghana",
+            start: DateTime.now - 5.years,
+            end: DateTime.now,
+            loan: "No",
+            degree:"BSc"
+              )
+>>>>>>> newbranch

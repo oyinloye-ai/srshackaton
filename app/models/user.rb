@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :institutions
   has_many :expenditures
   has_many :loans
+  has_many :messages
+  has_many :dailups
   #A users activity shouldn't leave because they leave the platform
   #handle in a better way
   #Add a db column to make users active or inactive so on destroy

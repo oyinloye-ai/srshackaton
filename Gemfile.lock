@@ -140,6 +140,9 @@ GEM
     puma (3.6.2)
     rack (2.0.1)
     rack-cors (0.4.1)
+    rack-synctime (0.0.2)
+      bundler (>= 1.0)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.1)
@@ -225,7 +228,10 @@ GEM
       unf_ext
     unf_ext (0.0.7.2)
     unf_ext (0.0.7.2-x64-mingw32)
+<<<<<<< HEAD
     wdm (0.1.1)
+=======
+>>>>>>> newbranch
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -258,6 +264,7 @@ DEPENDENCIES
   pry
   puma (~> 3.0)
   rack-cors
+  rack-synctime
   rails (~> 5.0.1)
   react-rails
   responders

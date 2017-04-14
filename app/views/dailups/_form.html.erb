@@ -1,0 +1,32 @@
+<%= form_for(dailup) do |f| %>
+  <% if dailup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dailup.errors.count, "error") %> prohibited this dailup from being saved:</h2>
+
+      <ul>
+      <% dailup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :called_at %>
+    <%= f.datetime_select :called_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number_called %>
+    <%= f.text_field :number_called %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

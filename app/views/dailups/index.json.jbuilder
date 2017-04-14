@@ -1,0 +1,1 @@
+json.array! @dailups, partial: 'dailups/dailup', as: :dailup

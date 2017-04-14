@@ -1,0 +1,1 @@
+json.partial! "dailups/dailup", dailup: @dailup
