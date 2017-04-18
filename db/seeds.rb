@@ -121,9 +121,10 @@ end
             )
       end
 
-        3.times do
+      n = 3
+        n.times do
           user_pending.expenditures.create(
-                      expense_type: @expenditures_array[selector],
+                      expense_type: @expenditures_array[n],
                       amount: rand(1...1000).round(-2),
                       period: rand(1...50)
                         )
