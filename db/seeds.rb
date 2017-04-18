@@ -91,17 +91,18 @@ end
        3.times do
         user_pending.savings.create(
             account_number: @savings_array[selector],
-            amount: rand(100...9000).round(-2),
+            amount: rand(100...1000).round(-2),
             date: DateTime.now - rand(1...50).days
               )
       end
       4.times do
+        rand_amount = rand(20...500)
         user_pending.messages.create(
             sent_at: DateTime.now - rand(1...50).days,
-            content: "Money Transfer Deposit received for GHS #{random_amount}.00 
+            content: "Money Transfer Deposit received for GHS #{rand_amount}.00 
             from SANTOSH NAIR Token: 397121244007 Transaction ID: 1344240865. 
             TRANSACTION FEE IS 0",
-            amount: random_amount
+            amount: rand_amount
             )
       end
 
@@ -123,7 +124,7 @@ end
         3.times do
           user_pending.expenditures.create(
                       expense_type: @expenditures_array[selector],
-                      amount: rand(1...40000).round(-2),
+                      amount: rand(1...1000).round(-2),
                       period: rand(1...50)
                         )
           end
