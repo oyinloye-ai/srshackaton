@@ -25,6 +25,7 @@ development:
   <<: *default
   database: creditalert_development
 
+
 test:
   <<: *default
   database: creditalert_test

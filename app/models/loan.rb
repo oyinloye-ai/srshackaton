@@ -177,7 +177,8 @@ class Loan < ApplicationRecord
       else
         payment_credit_score = 20
       end
-
+    #The payment credit is a score percentage of 30
+    score = (payment_credit_score *30/ 75) * 800/100
 
     end
 
